@@ -291,24 +291,25 @@ body {
 .benifits {
     background: #01b0ff;
     color: #fff;
-    padding-bottom: 0;
     h3 {
         margin: 0;
-        font-size: 50px;
+        font-size: 38px;
         margin-bottom: 40px;
+        font-weight: 300;
     }
     .item {
-        padding-bottom: 90px;
+        padding-bottom: 40px;
         max-width: 490px;
         h4 {
             margin: 0;
-            font-size: 30px;
+            font-size: 22px;
             line-height: (37/30);
             margin-bottom: 10px;
+            font-weight: 400;
         }
         p {
             margin: 0;
-            font-size: 19px;
+            font-size: 14px;
             line-height: (22/19);
             text-align: justify;
         }
