@@ -46,13 +46,14 @@ body {
             color: #fff;
             font-size: 24px;
             margin: 0;
-            position: relative;
+            position: static;
             left: 36px;
+            font-weight: 300;
         }
     }
     .address {
         position: absolute;
-        right: 30px;
+        right: 15px;
         top: 13px;
         color: #fff;
     }
@@ -137,8 +138,8 @@ body {
     background-size: cover;
     .content {
         display: inline-block;
-        background: #01b0ff;
-        color: #fbf7ff;
+        background: rgba(1,176,255,.7);
+        color: #fff;
         border-radius: 20px 20px 20px 0;
         text-align: center;
         padding: 85px 40px 40px 40px;
@@ -224,9 +225,9 @@ body {
                 text-align: left;
                 font-size: 18px;
             }
-            &:last-child {
-                border-bottom: 2px solid #e0e0e0;
-            }
+//            &:last-child {
+//                border-bottom: 2px solid #e0e0e0;
+//            }
         }
         .price {
             font-size: 40px;
@@ -346,7 +347,7 @@ p {
         margin-top: 10px;
     }
     p {
-        font-size: 33px;
+        font-size: 20px;
         font-weight: 300;
         i {
             margin-right: 15px;
