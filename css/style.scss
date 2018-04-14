@@ -1,10 +1,16 @@
 $f: 'Roboto',
 sans-serif;
-
+$s: 'Roboto Slab',
+serif;
 body {
     font-family: $f;
+    font-size: 14px;
+    color: #515151;
 }
 
+.container {
+    max-width: 1012px;
+}
 
 .flex {
     display: flex;
@@ -12,13 +18,12 @@ body {
 }
 
 .main-header {
-    background: rgba(0, 176, 225, .8);
-    position: fixed;
-    width: 100%;
-    z-index: 9999;
-    padding-bottom: 10px;
-    padding-top: 20px;
+    padding-bottom: 2px;
+    background: #fff;
+    padding-top: 7px;
     transition: .5s;
+    box-shadow: 0 0 8px;
+    position: relative;
     .navbar-default {
         background: none;
         border: none;
@@ -28,34 +33,43 @@ body {
         margin-top: 36px;
     }
     .navbar-nav > li > a {
-        font-size: 16px;
-        color: #fff;
+        color: #515151;
+        font-size: 14px;
+        font-weight: 500;
+        &:hover,
+        &:focus {
+            color: #00B0FF;
+        }
     }
     .navbar-brand {
         height: auto;
+        font-family: 'Arial';
+        padding-left: 0;
         h1 {
             margin: 0;
-            font-size: 34px;
-            color: #fff;
+            font-size: 26px;
             span {
-                color: #FF8402;
+                color: #00B0FF;
             }
         }
         p {
             text-align: right;
-            color: #fff;
-            font-size: 24px;
+            font-size: 17px;
             margin: 0;
             position: static;
-            left: 36px;
-            font-weight: 300;
         }
     }
     .address {
         position: absolute;
         right: 15px;
-        top: 13px;
-        color: #fff;
+        top: 22px;
+        font-size: 16px;
+        font-weight: 500;
+        z-index: 2;
+        span,
+        a {
+            color: #00B0FF;
+        }
     }
 }
 
@@ -63,6 +77,23 @@ body {
     padding-bottom: 0;
     padding-top: 5px;
     transition: .5s;
+    position: fixed;
+    .navbar-brand h1 {
+        font-size: 22px;
+        transition: .5s;
+    }
+    .navbar-brand p {
+        font-size: 15px;
+    }
+    .navbar-nav {
+        margin-top: 22px;
+        transition: .5s;
+    }
+    .address {
+        top: 8px;
+        font-size: 14px;
+        transition: .5s;
+    }
 }
 
 .modal-dialog {
@@ -131,64 +162,67 @@ body {
 
 
 .banner {
-    min-height: 1020px;
-    display: flex;
-    align-items: center;
-    background: url(../images/bg_main@2x.jpg) fixed;
-    background-size: cover;
-    .content {
-        display: inline-block;
-        background: rgba(1,176,255,.7);
-        color: #fff;
-        border-radius: 20px 20px 20px 0;
-        text-align: center;
-        padding: 85px 40px 40px 40px;
-        h1 {
-            margin: 0;
-            font-size: 34px;
-            margin-bottom: 40px;
-            line-height: (41/34);
-        }
-        a.btn {
-            font-weight: 500;
-            display: block;
-            font-size: 30px;
-            background: #f8b51c;
-            color: #fbf7ff;
-            border-radius: 10px;
-            padding: 17px 12px;
-            transition: .5s;
-            &:hover {
-                background: #36af30;
-            }
+    position: relative;
+    border-bottom: 3px solid #bfbfbf;
+    .bg-right {
+        background: url(../images/bg_main@2x.jpg) no-repeat;
+        background-size: cover;
+        position: absolute;
+        width: 45%;
+        height: 100%;
+        right: 0;
+        top: 0;
+    }
+    h1 {
+        margin: 0;
+        font-size: 44px;
+        font-weight: 400;
+        font-family: $s;
+        line-height: (47/44);
+    }
+    p {
+        font-size: 16px;
+        margin: 40px 0 30px 0;
+        font-weight: 300;
+    }
+    .button {
+        font-size: 20px;
+        padding: 4px 12px;
+        max-width: 190px;
+        margin-bottom: 15px;
+    }
+    .address {
+        font-size: 13px;
+        a {
+            color: #00C853;
         }
     }
 }
 
 .space {
-    padding: 85px 0;
+    padding: 70px 0;
 }
 
 .section-head {
     h2 {
         margin: 0;
+        font-size: 16px;
+        font-weight: 500;
         display: inline-block;
-        color: #5E5E5E;
-        border-bottom: 2px solid #05adf6;
-        padding-bottom: 10px;
+        border-bottom: 2px solid #00b0ff;
+        padding-bottom: 15px;
         text-transform: uppercase;
-        margin-bottom: 85px;
+        margin-bottom: 50px;
     }
 }
 
 .patner {
     h3 {
         margin: 0;
-        font-size: 41px;
-        line-height: (49/41);
-        color: #515151;
-        text-transform: uppercase;
-        margin-bottom: 40px;
+        font-size: 35px;
+        font-family: $s;
+        font-weight: 400;
+        line-height: (42/34); //        margin-bottom: 40px;
     }
     .item {
         padding: 30px 0;
@@ -199,6 +233,7 @@ body {
 }
 
 .service {
+    background: #f6f6f6;
     .table {
         max-width: 934px;
         margin: 0 auto;
@@ -207,68 +242,144 @@ body {
         > th {
             border-bottom: transparent;
             font-weight: 400;
-            font-size: 21px;
-            border-right: 2px solid #e0e0e0;
+            font-size: 20px;
+            border-right: 2px solid #c0c0c0;
             text-align: center;
+            color: #282828;
             small {
                 display: block;
-                font-size: 15px;
+                font-size: 14px;
                 font-style: italic;
+                color: #FF8402;
             }
         }
         > td {
-            border-right: 2px solid #e0e0e0;
-            border-top: 2px solid #e0e0e0;
+            border-right: 2px solid #c0c0c0;
+            border-top: 2px solid #c0c0c0;
             text-align: center;
             vertical-align: middle;
             &:first-child {
                 text-align: left;
                 font-size: 18px;
-            }
-//            &:last-child {
-//                border-bottom: 2px solid #e0e0e0;
-//            }
+            } //            &:last-child {
+            //                border-bottom: 2px solid #e0e0e0;
+            //            }
         }
         .price {
-            font-size: 40px;
-            font-weight: 500;
+            font-size: 34px;
+            font-weight: 700;
+            color: #282828;
         }
     }
-    .service-item {
-        margin-top: 145px;
+
+
+}
+
+.new-service {
+    .flex {
+        .col-md-4 {
+            margin-bottom: 30px;
+
+        }
     }
     .item {
-        border: 1px solid #00b1ff;
-        border-radius: 8px;
-        padding: 30px 15px 50px 15px;
-        max-width: 450px;
-        margin-bottom: 30px !important;
-        h3 {
+        max-width: 300px;
+        margin: 0 auto;
+
+        font-family: $s;
+        text-align: center;
+        padding: 40px 30px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+        height: 100%;
+        position: relative;
+        padding-bottom: 100px;
+        h2 {
             margin: 0;
-            font-size: 27px;
             font-weight: 400;
-            margin-bottom: 18px;
+            font-size: 20px;
+            min-height: 66px;
         }
-        .cost {
-            color: #00B0FF;
-            font-weight: 500;
-            font-size: 40px;
-            border-top: 2px solid #82d7ff;
-            border-bottom: 2px solid #82d7ff;
-            max-width: 220px;
-            margin: 0 auto;
-            padding: 3px 0;
+        small {
+            display: block;
+            font-size: 12px;
+            margin-top: 15px;
         }
-        p {
-            margin: 0;
-            font-size: 25px;
-            font-weight: 300;
-            margin-bottom: 45px;
-            margin-top: 25px;
+        .price {
+            border-top: 2px solid #c9c9c9;
+            border-bottom: 2px solid #c9c9c9;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            padding-bottom: 27px;
+            color: #282828;
+            .or {
+                font-size: 20px;
+            }
+            .number {
+                font-size: 60px;
+                line-height: 1;
+                position: relative;
+                display: inline-block;
+                &:before {
+                    content: '$';
+                    position: absolute;
+                    left: -14px;
+                    top: 7px;
+                    font-size: 21px;
+                    font-weight: 700;
+                }
+
+            }
+            p {
+                font-size: 11px;
+                font-style: italic;
+
+            }
         }
         .button {
-            font-size: 36px;
-            max-width: 260px;
+            font-size: 19px;
+            padding: 5px 12px;
+            margin-top: 30px;
+            &:hover {
+                background: #36af30;
+            }
+        }
+        h3 {
+            margin: 0;
+            font-size: 15px;
+            margin-bottom: 25px;
+            color: #282828;
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-align: left;
+            li {
+                font-size: 13px;
+                margin-bottom: 5px;
+                &:before {
+                    content: "\f00c";
+                    font-weight: 900;
+                    font-family: 'Font Awesome 5 Free';
+                    float: left;
+                    width: 14px;
+                }
+                p {
+                    width: calc(100% - 14px);
+                    float: left;
+                    padding-left: 10px;
+                }
+            }
+        }
+        .btn {
+            color: #fff;
+            background: #ff8402;
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            width: 78%;
             margin: 0 auto;
         }
     }
@@ -276,30 +387,31 @@ body {
 
 .button {
     display: block;
-    background: #ff8402;
+    background: #36af30;
     color: #fff;
     padding: 9px 12px;
     transition: .5s;
     font-size: 12px;
     white-space: normal;
     &:hover {
-        background: #36af30;
+        background: #ff8402;
         color: #fff;
     }
 }
 
 .benifits {
-    background: #01b0ff;
+    background: #00b0ff;
     color: #fff;
     h3 {
         margin: 0;
         font-size: 38px;
-        margin-bottom: 40px;
+        margin-bottom: 25px;
         font-weight: 300;
+        font-family: $s;
     }
     .item {
         padding-bottom: 40px;
-        max-width: 490px;
+        max-width: 376px;
         h4 {
             margin: 0;
             font-size: 22px;
@@ -310,8 +422,7 @@ body {
         p {
             margin: 0;
             font-size: 14px;
-            line-height: (22/19);
-            text-align: justify;
+            line-height: (17/14);
         }
     }
     .item.right {
@@ -325,10 +436,10 @@ p {
 
 .about-us {
     .item {
+        align-items: center;
         p {
-            font-size: 30px;
+            font-size: 16px;
             line-height: (44/37);
-            color: #848484;
             text-align: justify;
         }
     }
@@ -341,6 +452,7 @@ p {
 
 .contact {
     color: #848484;
+    background: #f6f6f6;
     h3 {
         margin: 0;
         font-size: 41px;
@@ -348,8 +460,9 @@ p {
         margin-top: 10px;
     }
     p {
-        font-size: 20px;
-        font-weight: 300;
+        padding-left: 30px;
+        margin-bottom: 5px;
+
         i {
             margin-right: 15px;
             color: #05adf6;
@@ -358,9 +471,8 @@ p {
 }
 
 .main-footer {
-    background: #ff8402;
-    font-size: 21px;
-    padding: 25px 0;
+    background: #444444;
+    padding: 8px 0;
     p {
         color: #fff;
     }
@@ -402,68 +514,25 @@ p {
         margin-bottom: 7px !important;
     }
 
-
-
-
-
-
-    .main-header .navbar-brand h1 {
-        font-size: 22px;
-    }
-    .main-header .navbar-brand p {
-        font-size: 16px;
-    }
     .navbar-toggle {
-        margin-top: 24px;
+        margin-top: 18px;
     }
     .main-header .address {
         display: none;
     }
-    .main-header {
-        padding-top: 8px;
-    }
+
     .navbar-default .navbar-toggle .icon-bar {
-        background-color: #fff;
+        background-color: #00B0FF;
     }
-    .navbar-fixed-top .navbar-toggle {
-        margin-top: 17px;
-    }
-    .patner h3 {
-        font-size: 28px;
-    }
-    .service .item {
-        margin: 0 auto;
-    }
-    .benifits .item {
-        margin: 0 auto;
+    .banner .bg-right {
+        width: 35%;
+        background-position: center;
     }
     .about-us .item p {
-        font-size: 22px;
+        font-size: 14px;
     }
-    .contact p {
-        font-size: 20px;
-    }
-    .contact h3 {
-        font-size: 30px;
-    }
-    .benifits .item h4 {
-        font-size: 20px;
-    }
-    .benifits .item p {
-        font-size: 15px;
-    }
-    .benifits .item {
-        padding-bottom: 50px;
-    }
-    .benifits {
-        padding-bottom: 30px;
-    }
-    .benifits h3 {
-        font-size: 30px;
-    }
-    .service .item p {
-        font-size: 18px;
-    }
+
+
 }
 
 
@@ -493,30 +562,49 @@ p {
     .service .table tr > td:first-child {
         font-size: 14px;
     }
-    .service .item .button {
-	font-size: 25px;
-}
+
+    .banner .bg-right {
+        display: none;
+    }
+    .benifits .item {
+        margin-left: 0;
+        max-width: 100%;
+    }
+    .benifits h3 {
+        font-size: 30px;
+    }
+    .about-us .item {
+        img {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+    .banner h1 {
+        font-size: 35px;
+        text-align: center;
+        br {
+            display: none;
+        }
+    }
 }
 
 
 
 @media (max-width:575px) {
-    .button {
+    .service .button {
         font-size: 11px;
     }
-    .banner {
-	min-height: 780px;
-}
-    .banner .content h1 {
-	font-size: 25px;
-}
-    .banner .content a.btn {
-	font-size: 22px;
-}
+    .banner h1,
+    patner h3 {
+        font-size: 32px;
+    }
 }
 
 
 @media (max-width:480px) {
+    .navbar-toggle {
+        margin-top: 15px;
+    }
     .service .table tr > th:first-child {
         width: 35%;
     }
@@ -527,35 +615,30 @@ p {
     .service .table tr .price {
         font-size: 16px;
     }
-    .button {
+    .service .button {
         font-size: 10px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    .contact p {
-	font-size: 17px;
-}
-    .contact h3 {
-	font-size: 25px;
-}
-    .main-footer {
-	font-size: 14px;
-}
-    .about-us .item p {
-	font-size: 18px;
-}
+    .banner p {
+        font-size: 14px;
+    }
+    .banner h1,
+    .benifits h3,
+    .patner h3 {
+        font-size: 21px;
+    }
+    .benifits .item h4 {
+        font-size: 19px;
+    }
+    .banner .button {
+        font-size: 14px;
+    }
     .main-header .navbar-brand h1 {
-	font-size: 15px;
-}
+        font-size: 18px !important;
+    }
     .main-header .navbar-brand p {
-	font-size: 12px;
-	left: 20px;
-}
-    .navbar-toggle {
-	margin-top: 18px;
-}
-    .section-head h2 {
-	font-size: 20px;
-}
+        font-size: 14px !important;
+    }
 }
