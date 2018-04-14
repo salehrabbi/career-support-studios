@@ -564,14 +564,17 @@ p {
     }
 
     .banner .bg-right {
-        display: none;
+        position: static;
+        width: 100%;
+        min-height: 400px;
+        background-position: top;
     }
     .benifits .item {
         margin-left: 0;
         max-width: 100%;
     }
     .benifits h3 {
-        font-size: 30px;
+        font-size: 28px;
     }
     .about-us .item {
         img {
@@ -579,8 +582,11 @@ p {
             margin-bottom: 30px;
         }
     }
+    .patner h3{
+        font-size: 28px;
+    }
     .banner h1 {
-        font-size: 35px;
+        font-size: 28px;
         text-align: center;
         br {
             display: none;
@@ -596,7 +602,7 @@ p {
     }
     .banner h1,
     patner h3 {
-        font-size: 32px;
+        font-size: 28px;
     }
 }
 
@@ -627,7 +633,7 @@ p {
     .banner h1,
     .benifits h3,
     .patner h3 {
-        font-size: 21px;
+        font-size: 28px;
     }
     .benifits .item h4 {
         font-size: 19px;
