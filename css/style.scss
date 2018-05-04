@@ -351,7 +351,7 @@ p {
     background: #f6f6f6;
     .container.custom {
         position: relative;
-        &:after {
+        .line {
             content: "";
             width: 6px;
             height: 92%;
@@ -652,7 +652,7 @@ p {
     }
     .time-line {
         .container.custom {
-            &:after {
+            .line {
                 left: auto;
                 right: 30px;
                 height: 95%;
@@ -707,7 +707,7 @@ p {
     }
     .time-line {
         .container.custom {
-            &:after {
+            .line {
                 display: none;
             }
         }
